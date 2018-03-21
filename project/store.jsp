@@ -70,14 +70,14 @@ String sta = request.getParameter("sta");
 		}
 		else
 			{
-				sql = "insert into form(age,sp,fsp,prg,sy,smd,spdy,hy,hcp,iny,iupy,sty,stcl,stcc,stvpc,stvc,sts,stpid,stgh,sta,sth,sthb,sthv,snd,sfd,sld,dxcy,dcy,dhy,dxy,user_id) values('"+age+"','"+sp+"','"+fsp+"','"+prg+"','"+sy+"','"+smd+"','"+spdy+"','"+hy+"','"+iny+"','"+iupy+"','"+sty+"','"+stcl+"','"+stcc+"','"+stvpc+"','"+stvc+"','"+sts+"','"+stpid+"','"+stgh+"','"+sta+"','"+sth+"','"+sthb+"','"+sthv+"','"+snd+"','"+sfd+"','"+sld+"','"+dxcy+"','"+hcp+"','"+dcy+"','"+dhy+"','"+dxy+"','"+id+"')";
+				sql = "insert into form(age,sp,fsp,prg,sy,smd,spdy,hy,iny,iupy,sty,stcl,stcc,stvpc,stvc,sts,stpid,stgh,sta,sth,sthb,sthv,snd,sfd,sld,dxcy,dcy,dhy,dxy,hcp,user_id) values('"+age+"','"+sp+"','"+fsp+"','"+prg+"','"+sy+"','"+smd+"','"+spdy+"','"+hy+"','"+iny+"','"+iupy+"','"+sty+"','"+stcl+"','"+stcc+"','"+stvpc+"','"+stvc+"','"+sts+"','"+stpid+"','"+stgh+"','"+sta+"','"+sth+"','"+sthb+"','"+sthv+"','"+snd+"','"+sfd+"','"+sld+"','"+dxcy+"','"+hcp+"','"+dcy+"','"+dhy+"','"+dxy+"','"+id+"')";
 		
 			int action = conn.createStatement().executeUpdate(sql);
 			conn.setAutoCommit(true);
 			if(action>=1)
 			{
 				%>
-			<jsp:forward page="check.jsp"></jsp:forward>
+			<jsp:forward page="<jsp:forward page="http://127.0.0.1:5000/?age=<%= age%>&sex_part=<%=sp%>&f_s_i=<%=fsp%>&n_o_preg=<%=prg%>&smokes=<%=sy%>&smokes_year=<%=smd%>&smokes_pack=<%=spdy%>&hormonal_contra=<%=hcp%>&hormonal_year=<%=hy%>&iud<%=iny%>&iud_year<%=iupy%>&std=<%sty%>&std_n=<%=stcl%>&std_co=<%=stcc%>&std_cer=<%=stvpc%>&std_va=<%=stvc%>&std_vulvo=<%=sts%>&std_syp=1&std_pid=<%=stpid%>&std_geni=<%=stgh%><%=stgh%>&std_mollu=0&std_aids=<%=sta%>&std_hiv=<%=sth%>&std_hepa=<%=sthb%>&std_hpv=<%=sthv%>&no_std=<%=snd%>&f_diag=<%=sfd%>&l_diag=<%=sld%>&dx_cancer=<%=dxcy%>&dx_cin=<%=dcy%>&dx_hpv=<%=dhy%>&dx=<%=dxy%>"></jsp:forward>
 			<%
 			
 			}
